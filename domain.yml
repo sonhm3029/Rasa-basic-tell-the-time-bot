@@ -1,0 +1,36 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - query_time
+  - query_date
+  - query_weekday
+
+entities:
+  - date
+
+slots:
+  date:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: date
+
+responses:
+  utter_greet:
+  - text: Hello, I'm Silly, I can check the time, date and day of the week for you. You can ask me "what time is it now?", "what day is today?" or "what day is tomorrow?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+actions:
+  - action_query_time
+  - action_query_date
+  - action_query_weekday
+  - utter_goodbye
+  - utter_greet
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

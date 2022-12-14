@@ -1,0 +1,29 @@
+version: "3.1"
+
+stories:
+
+- story: say greet
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: query time
+  steps: 
+    - intent: query_time
+    - action: action_query_time
+
+- story: query date
+  steps: 
+    - intent: query_date
+    - action: action_query_date
+
+- story: query weekday
+  steps:
+    - intent: query_weekday
+    - action: action_query_weekday
+
+- story: say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
